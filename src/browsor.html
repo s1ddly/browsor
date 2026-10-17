@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+    .chat-history {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 8px;
+      overflow-y: auto;
+      margin-bottom: 8px;
+    }
+    .input-area {
+      display: flex;
+      gap: 8px;
+    }
+    input {
+      flex: 1;
+      padding: 8px;
+    }
+    button {
+      padding: 8px 16px;
+    }
+  </style>
+</head>
+<body>
+  <!-- language: lang-html -->
+
+<div style="display: flex; align-items: stretch; gap: 15px; min-height: 0;">
+  
+  <div style="flex-grow: 0; flex-shrink: 1; display: flex; width: max-content;">
+    <img src="logo.png" 
+         alt="Dynamic Image" 
+         style="height: 100%; width: auto; object-fit: cover; max-height: 100%;" />
+  </div>
+
+  <div style="flex-grow: 1; flex-shrink: 1;">
+    <h2 style="margin-top: 0;">Browsor</h2>
+  </div>
+
+</div>
+
+
+  <div class="chat-history" id="chat"></div>
+  <div class="input-area">
+    <input type="text" id="msg" placeholder="Type a message...">
+    <button id="send">Send</button>
+  </div>
+  <script src="sidebar.js"></script>
+</body>
+</html>

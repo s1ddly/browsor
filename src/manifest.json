@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Browsor",
+  "version": "1.0",
+  "description": "An agentic browser LLM interface",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "action": {
+    "default_title": "Toggle Browsor Sidebar"
+  },
+  "sidebar_action": {
+    "default_title": "Browsor Chat",
+    "default_panel": "empty.html",
+    "open_at_install": false
+  }
+}
