@@ -32,30 +32,42 @@
       padding: 8px 16px;
     }
   </style>
+  <script>
+    function sendMessage() {
+      msg_content = document.getElementById("msg").value
+      if (!msg_content || msg_content.trim() === '') {
+        return;
+      }
+
+      document.getElementById("chat").innerText = document.getElementById("chat").innerText + document.getElementById("msg").value + "\n";
+      document.getElementById("msg").value = "";
+    }
+  </script>
 </head>
 <body>
   <!-- language: lang-html -->
 
-<div style="display: flex; align-items: stretch; gap: 15px; min-height: 0;">
+<div style="display: flex; align-items: stretch; min-height: 0; height: 50px; margin-bottom: 10px">
   
-  <div style="flex-grow: 0; flex-shrink: 1; display: flex; width: max-content;">
+  <div style="flex-grow: 0; flex-shrink: 1; display: flex; width: min-content;">
     <img src="logo.png" 
          alt="Dynamic Image" 
-         style="height: 100%; width: auto; object-fit: cover; max-height: 100%;" />
+         style="width: auto; object-fit: cover;" />
   </div>
 
   <div style="flex-grow: 1; flex-shrink: 1;">
     <h2 style="margin-top: 0;">Browsor</h2>
-  </div>
+</div>
 
 </div>
 
 
   <div class="chat-history" id="chat"></div>
-  <div class="input-area">
-    <input type="text" id="msg" placeholder="Type a message...">
-    <button id="send">Send</button>
-  </div>
-  <script src="sidebar.js"></script>
+  <form onsubmit="event.preventDefault(); sendMessage()">
+    <div class="input-area">
+      <input type="text" id="msg" placeholder="Type a message...">
+      <button id="submit_form" type="submit">Send</button>
+    </div>
+  </form>
 </body>
 </html>
